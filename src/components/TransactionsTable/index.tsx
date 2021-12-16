@@ -1,9 +1,9 @@
-import { useContext } from "react";
+import { FiTrash2 } from "react-icons/fi";
 import { useTransactions } from "../../hooks/useTransactions";
 import { Container } from "./styles";
 
 export function TransactionsTable() {
-  const { transactions } = useTransactions();
+  const { transactions, deleteTransaction } = useTransactions();
 
   return (
     <Container>
@@ -14,6 +14,7 @@ export function TransactionsTable() {
             <th>Valor</th>
             <th>Categotia</th>
             <th>Data</th>
+            <th>Deletar</th>
           </tr>
         </thead>
 
@@ -31,6 +32,13 @@ export function TransactionsTable() {
               <td>
                 {new Intl.DateTimeFormat('pt-BR').format(new Date(transaction.createdAt)
                 )}
+              </td>
+              <td>
+                <button
+                  type="button"
+                  onClick={() => deleteTransaction(transaction.id)}>
+                  <FiTrash2 size={20} />
+                </button>
               </td>
             </tr>
           ))}

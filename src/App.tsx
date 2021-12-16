@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import styled from 'styled-components';
 import Modal from 'react-modal';
 import { TransactionProvider } from './hooks/useTransactions';
 import { Dashboard } from './components/Dashboard';

@@ -1,11 +1,9 @@
-import { FormEvent, useState, useContext } from 'react';
+import { FormEvent, useState } from 'react';
 import Modal from 'react-modal';
 import incomeImg from '../../assets/income.svg';
 import outcomeImg from '../../assets/outcome.svg';
 import closeImg from '../../assets/close.svg';
-import { title } from 'process';
 import { Container, TransactionsTypeContainer, RadioBox } from './styles';
-import { type } from 'os';
 import { useTransactions } from '../../hooks/useTransactions';
 
 interface NewTransactionModalProps {
