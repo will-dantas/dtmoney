@@ -21,7 +21,7 @@ export const Container = styled.div`
       background: var(--shape);
       color: var(--text-body);
       border-radius: 0.25rem;
-
+      animation-delay: 250ms;
       &:first-child {
         color: var(--text-title);
       }

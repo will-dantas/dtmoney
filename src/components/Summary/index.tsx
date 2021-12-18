@@ -3,7 +3,7 @@ import outcomeImg from '../../assets/outcome.svg'
 import totalImg from '../../assets/total.svg'
 import { useTransactions } from '../../hooks/useTransactions';
 
-import { Container } from "./style";
+import { SummaryCard, Container, SummaryTotal } from "./style";
 
 export function Summary() {
   const { transactions } = useTransactions();
@@ -25,7 +25,7 @@ export function Summary() {
 
   return (
     <Container>
-      <div>
+      <SummaryCard>
         <header>
           <p>Entradas</p>
           <img src={incomeImg} alt="Entradas" />
@@ -36,21 +36,22 @@ export function Summary() {
             currency: 'BRL'
           }).format(summary.deposits)}
         </strong>
-      </div>
-      <div>
+      </SummaryCard>
+      <SummaryCard>
         <header>
           <p>Saídas</p>
           <img src={outcomeImg} alt="Saídas" />
         </header>
-        <strong> 
+        <strong>
           -
           {new Intl.NumberFormat('pt-BR', {
             style: 'currency',
             currency: 'BRL'
           }).format(summary.withdraws)}
         </strong>
-      </div>
-      <div className="highlight-background">
+      </SummaryCard>
+      <SummaryTotal currentTotal={summary.total >= 0}>
+
         <header>
           <p>Total</p>
           <img src={totalImg} alt="Total" />
@@ -61,7 +62,7 @@ export function Summary() {
             currency: 'BRL'
           }).format(summary.total)}
         </strong>
-      </div>
+      </SummaryTotal>
     </Container>
   )
 }

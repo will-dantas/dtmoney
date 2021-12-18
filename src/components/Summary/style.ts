@@ -5,14 +5,15 @@ export const Container = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-top: -10rem;
+`;
 
-  div{
-    background: var(--shape);
-    padding:1.5rem 2rem;
-    border-radius: 0.25rem;
-    color: var(--text-title);
+export const SummaryCard = styled.div` 
+  background: var(--shape);
+  padding:1.5rem 2rem;
+  border-radius: 0.25rem;
+  color: var(--text-title);
 
-    header{ 
+  header{ 
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -30,5 +31,21 @@ export const Container = styled.div`
       background: var(--green);
       color: #FFF;
     }
-  }
 `;
+
+type SummaryTotalProps = {
+  currentTotal: boolean;
+}
+
+const colors = {
+  green: '#33cc95',
+  red: '#e62e4d'
+};
+
+export const SummaryTotal = styled(SummaryCard) <SummaryTotalProps>`
+  color: #fff;
+  background: ${props => props.currentTotal
+    ? colors.green
+    : colors.red
+  };
+`
