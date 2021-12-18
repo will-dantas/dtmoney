@@ -5,6 +5,7 @@ import outcomeImg from '../../assets/outcome.svg';
 import closeImg from '../../assets/close.svg';
 import { Container, TransactionsTypeContainer, RadioBox } from './styles';
 import { useTransactions } from '../../hooks/useTransactions';
+import { AnimatePresence, motion } from 'framer-motion';
 
 interface NewTransactionModalProps {
   isOpen: boolean;
@@ -40,6 +41,53 @@ export function NewTransactionModal({ isOpen, onRequestClose }: NewTransactionMo
       onRequestClose={onRequestClose}
       overlayClassName="react-modal-overlay"
       className="react-modal-content"
+      overlayElement={(props: any, children) => (
+        <AnimatePresence>
+          <motion.div
+            {...props}
+            variants={{
+              visible: {
+                opacity: 1,
+              },
+              hidden: {
+                opacity: 0,
+              },
+            }}
+            initial="hidden"
+            animate="visible"
+            exit={{
+              opacity: 0,
+            }}
+          >
+            {children}
+          </motion.div>
+        </AnimatePresence>
+      )}
+      contentElement={(props: any, children) => {
+        return (
+          <AnimatePresence>
+            <motion.div
+              {...props}
+              variants={{
+                visible: {
+                  translateY: 0,
+                },
+                hidden: {
+                  translateY: 80,
+                },
+              }}
+              initial="hidden"
+              animate="visible"
+              exit={{
+                translateY: 80,
+                opacity: 0,
+              }}
+            >
+              {children}
+            </motion.div>
+          </AnimatePresence>
+        )
+      }}
     >
 
       <button
