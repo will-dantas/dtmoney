@@ -1,12 +1,12 @@
-import logoImg from '../../assets/logo.svg'
-import { Container, Content } from './styles'
+import logoImg from "../../assets/logo.svg";
+import { Summary } from "../Summary";
+import { Container, Content } from "./styles";
 
 interface HeaderProps {
   onOpenNewTransitionModal: () => void;
 }
 
 export function Header({ onOpenNewTransitionModal }: HeaderProps) {
-
   return (
     <Container>
       <Content>
@@ -15,6 +15,7 @@ export function Header({ onOpenNewTransitionModal }: HeaderProps) {
           Nova transação
         </button>
       </Content>
+      <Summary />
     </Container>
-  )
+  );
 }
