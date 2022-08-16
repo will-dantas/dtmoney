@@ -5,15 +5,23 @@ export const Container = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-top: -10rem;
-  margin-left: 20rem;
-  margin-right: 20rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
 
   @media (max-width: 768px) {
     grid-template-columns: repeat(1, 1fr);
     gap: 2rem;
     margin-top: -10rem;
-    margin-left: 3rem;
-    margin-right: 3rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  @media (min-width: 1150px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: -10rem;
+    margin-left: 20rem;
+    margin-right: 20rem;
   }
 `;
 
@@ -22,7 +30,14 @@ export const SummaryCard = styled.div`
   padding: 1.5rem 2rem;
   border-radius: 0.25rem;
   color: var(--text-title);
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+
+  @media (max-width: 768px) {
+    margin-bottom: 0rem;
+    &:last-child {
+      margin-bottom: 2rem;
+    }
+  }
 
   header {
     display: flex;

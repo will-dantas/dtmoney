@@ -1,21 +1,19 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  margin-top: 4rem;
-
-  table{ 
+  table {
     width: 100%;
     border-spacing: 0 0.5rem;
 
-    th{ 
+    th {
       color: var(--text-body);
-      font-weight:400;
+      font-weight: 400;
       padding: 1rem 2rem;
       text-align: left;
       line-height: 1.5rem;
     }
 
-    td{
+    td {
       padding: 1rem 2rem;
       border: 0;
       background: var(--shape);
@@ -30,7 +28,7 @@ export const Container = styled.div`
         color: var(--green);
       }
 
-      &.withdraw{
+      &.withdraw {
         color: var(--red);
       }
 
@@ -44,7 +42,7 @@ export const Container = styled.div`
 
         &:hover {
           svg {
-            filter: brightness(0.5)
+            filter: brightness(0.5);
           }
         }
       }
