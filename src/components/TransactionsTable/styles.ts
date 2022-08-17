@@ -13,6 +13,10 @@ export const Container = styled.div`
       line-height: 1.5rem;
     }
 
+    tr {
+      border: 0;
+    }
+
     td {
       padding: 1rem 2rem;
       border: 0;

@@ -16,7 +16,7 @@ createServer({
           id: 1,
           title: 'Salário',
           type: 'deposit',
-          category: 'Dev',
+          category: 'SulAmerica',
           amount: 4000,
           createdAt: new Date('2021-02-12 09:00:00')
         },
@@ -24,8 +24,8 @@ createServer({
           id: 2,
           title: 'Aluguel',
           type: 'withdraw',
-          category: 'Apartamento',
-          amount: 800,
+          category: 'Flat',
+          amount: 500,
           createdAt: new Date('2021-02-14 11:00:00')
         }
       ]
